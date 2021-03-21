@@ -1,0 +1,33 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: book-service
+    
+# Configuration for database
+  jpa:
+    hibernate:
+      ddl-auto: none 
+      
+    # Auto generate the schema  
+#    properties:
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: create
+#              create-target: target/resources-gen/sql/schema.sql
+      
+logging:
+  file:
+    path: target/logs
+    name: ${logging.file.path}/BooksService.log  
+    
+
+# Customer properties used in the service
+security:
+  jwt:
+    token:
+      secret-key: secretKeyVerLonggggggggggggggggggggg
+      expiration: 600000
