@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.alphaone.example</groupId>
-	<artifactId>exampleservice-booking</artifactId>
+	<artifactId>exampleservice-book</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>exampleservice-booking</name>
+	<name>exampleservice-book</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

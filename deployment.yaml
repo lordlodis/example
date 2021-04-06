@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: book-site
-        image: exampleservice-booking:0.0.1-SNAPSHOT
+        image: exampleservice-book:0.0.1-SNAPSHOT
 ---
 apiVersion: v1
 kind: Service
