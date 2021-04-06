@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exampleservice-book
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      bb: web
+  template:
+    metadata:
+      labels:
+        bb: web
+    spec:
+      containers:
+      - name: book-site
+        image: exampleservice-booking:0.0.1-SNAPSHOT
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: book-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    bb: web
+  ports:
+  - port: 9090
+    targetPort: 9090
+    nodePort: 30090
