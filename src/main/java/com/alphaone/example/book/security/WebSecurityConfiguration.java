@@ -34,15 +34,20 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		/*
+		 * NOTE: Currently we simulate the JWT token communicated between services
+		 * in the JwtTokenFilter.
+		 */
 		
-//		http.authorizeRequests((requests) -> requests.anyRequest().authenticated());
-//		http.formLogin();
-//		http.oauth2Login();
-		
+		/*
+		 * This logic enable certains URL to be accessed without authentication.
+		 * All other will need authentications.
+		 * This is the service level security - it requires JWT token. There should not be login
+		 * form in the service level. Login form is only provided from the API-gateway level.
+		 */
 		http.authorizeRequests()
 			.antMatchers("/packages/**").permitAll()
 			.antMatchers("/swagger-ui/**").permitAll()
-			.antMatchers("/books").permitAll()
 			.antMatchers("/users/signin").permitAll()
 			.antMatchers("/login").permitAll()
 			.antMatchers("/signin").permitAll()

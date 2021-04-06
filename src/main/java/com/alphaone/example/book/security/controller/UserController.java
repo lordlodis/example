@@ -12,7 +12,7 @@ import com.alphaone.example.book.security.model.User;
 import com.alphaone.example.book.security.service.UserService;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
 
 	@Autowired

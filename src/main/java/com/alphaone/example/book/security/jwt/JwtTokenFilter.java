@@ -53,6 +53,8 @@ public class JwtTokenFilter extends GenericFilterBean {
 		}
 		// Check for Authorization:Bearer JWT
 		String headerValue = ((HttpServletRequest) request).getHeader("Authorization");
+		
+		// FIXME: this getBearerToken now simulates the JWT logic: it add the correct JWT token into the request
 		getBearerToken(headerValue).ifPresent(token -> {
 			userDetailService.loadUserByJwtToken(token).ifPresent(userDetails -> {
 				SecurityContextHolder.getContext().setAuthentication(
