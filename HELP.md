@@ -9,6 +9,7 @@ The created image will be stored in the docker repository. Check it with "docker
 For quick deploying in development phase, we use the integrated Kubernetes provided by the Docker Desktop. Activate it in the Docker Destop setting.
 This integrated Kubernetes have access to the Docker repository to pull the necessary images.
 Simply call 'kubectl apply -f deployment.yaml' to deploy the image using the deployment configuration in deployment.yaml.
+Simply call 'kubectl delete -f deployment.yaml' to remove those service again.
 
 ## Futher documentations
 ### Reference Documentation
