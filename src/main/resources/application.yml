@@ -30,7 +30,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     service-url:
-      defaultZone: http://10.100.100.101:8761/eureka
+      defaultZone: ${EUREKA_SERVER_ADDRESS}
         
 logging:
   file:
