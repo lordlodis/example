@@ -11,6 +11,9 @@ This integrated Kubernetes have access to the Docker repository to pull the nece
 Simply call 'kubectl apply -f deployment.yaml' to deploy the image using the deployment configuration in deployment.yaml.
 Simply call 'kubectl delete -f deployment.yaml' to remove those service again.
 
+## Kafka in Kubernetes:
+https://strimzi.io/quickstarts/
+
 ## Futher documentations
 ### Reference Documentation
 For further reference, please consider the following sections:
