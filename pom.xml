@@ -109,6 +109,8 @@
 			<artifactId>springdoc-openapi-data-rest</artifactId>
 			<version>1.5.6</version>
 		</dependency>
+		
+		<!-- Dependencies to use Eureka client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
