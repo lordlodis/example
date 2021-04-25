@@ -11,6 +11,10 @@ This integrated Kubernetes have access to the Docker repository to pull the nece
 Simply call 'kubectl apply -f deployment.yaml' to deploy the image using the deployment configuration in deployment.yaml.
 Simply call 'kubectl delete -f deployment.yaml' to remove those service again.
 
+## Eureka on/off in prod/dev mode
+We use Feign, with dynamic URL defined. In dev mode, we define URL to be localhost. In prod mode, we define URL to be server reference (e.g. http://book-service/) - which is used lookingup in Eureka.
+Naturally we also deactivated Eureka in dev mode.
+
 ## Kafka in Kubernetes:
 https://strimzi.io/quickstarts/
 
