@@ -1,4 +1,4 @@
-insert into t_book (id, title, author) values
+insert into t_book (book_id, title, author) values
 (1, 'Spring Cloud', 'Spring'),
 (2, 'Spring Boot', 'Spring'),
 (3, 'Hibernate JPA in Spring', 'Max Mustermann'),

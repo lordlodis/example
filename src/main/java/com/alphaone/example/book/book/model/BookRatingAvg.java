@@ -3,6 +3,9 @@ package com.alphaone.example.book.book.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,30 +13,37 @@ import javax.persistence.Table;
 public class BookRatingAvg {
 
 	@Id
-	private long id;
-
 	@Column(name = "book_id")
 	private long bookId;
 
-	@Column(name = "avg_rate")
+	@Column(name = "rate_cnt")
+	private long ratingCnt;
+
+	@Column(name = "rate_avg")
 	private double avgRating;
-	
+
+	@OneToOne
+	@MapsId
+	@JoinColumn(name = "book_id")
+	private Book book;
+
 	protected BookRatingAvg() {
 	}
 
-	public BookRatingAvg(long id, long bookId, double avgRating) {
+	public BookRatingAvg(long bookId, long ratingCnt, double avgRating, Book book) {
 		super();
-		this.id = id;
 		this.bookId = bookId;
+		this.ratingCnt = ratingCnt;
 		this.avgRating = avgRating;
+		this.book = book;
 	}
 
-	public long getId() {
-		return id;
+	public long getRatingCnt() {
+		return ratingCnt;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setRatingCnt(long ratingCnt) {
+		this.ratingCnt = ratingCnt;
 	}
 
 	public long getBookId() {
@@ -42,6 +52,14 @@ public class BookRatingAvg {
 
 	public void setBookId(long bookId) {
 		this.bookId = bookId;
+	}
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
 	}
 
 	public double getAvgRating() {

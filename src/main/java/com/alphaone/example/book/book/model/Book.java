@@ -1,16 +1,20 @@
 package com.alphaone.example.book.book.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "t_book")
 public class Book {
-	
+
 	@Id
-	private long id;
+	@Column(name = "book_id")
+	private long bookId;
 
 	@Column(name = "title")
 	private String title;
@@ -18,23 +22,27 @@ public class Book {
 	@Column(name = "author")
 	private String author;
 
+	@OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+	private BookRatingAvg avgRating;
+
 	protected Book() {
 		// Auto-generated constructor stub used only in Hibernate
 	}
-	
+
 	public Book(long id, String title, String author) {
 		super();
-		this.id = id;
+		this.bookId = id;
 		this.title = title;
 		this.author = author;
 	}
 
-	public long getId() {
-		return id;
+	public long getBookId() {
+		return bookId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setBookId(long bookId) {
+		this.bookId = bookId;
 	}
 
 	public String getTitle() {
@@ -53,4 +61,11 @@ public class Book {
 		this.author = author;
 	}
 
+	public BookRatingAvg getAvgRating() {
+		return avgRating;
+	}
+
+	public void setAvgRating(BookRatingAvg avgRating) {
+		this.avgRating = avgRating;
+	}
 }

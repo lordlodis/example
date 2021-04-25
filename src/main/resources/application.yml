@@ -12,14 +12,14 @@ spring:
       ddl-auto: none 
       
     # Auto generate the schema  
-#    properties:
-#      javax:
-#        persistence:
-#          schema-generation:
-#            create-source: metadata
-#            scripts:
-#              action: create
-#              create-target: target/resources-gen/sql/schema.sql
+    properties:
+      javax:
+        persistence:
+          schema-generation:
+            create-source: metadata
+            scripts:
+              action: create
+              create-target: target/resources-gen/sql/schema.sql
         
 logging:
   file:
