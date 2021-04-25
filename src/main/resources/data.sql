@@ -4,6 +4,9 @@ insert into t_book (book_id, title, author) values
 (3, 'Hibernate JPA in Spring', 'Max Mustermann'),
 (4, 'Cloud Security', 'Dieter Bolz');
 
+insert into t_book_rate(book_id, rate_avg, rate_cnt) values
+(1, 4, 2);
+
 insert into t_role(role_id, name, description) values
 (1, 'ROLE_ADMIN', 'Admin role'),
 (2, 'ROLE_USER', 'User Role' );

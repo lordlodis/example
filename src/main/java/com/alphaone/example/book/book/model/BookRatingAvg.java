@@ -8,6 +8,8 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "t_book_rate")
 public class BookRatingAvg {
@@ -25,6 +27,7 @@ public class BookRatingAvg {
 	@OneToOne
 	@MapsId
 	@JoinColumn(name = "book_id")
+	@JsonIgnore
 	private Book book;
 
 	protected BookRatingAvg() {
